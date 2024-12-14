@@ -47,7 +47,7 @@ export default function NewModel() {
       const astriaId = await createAstriaModel(title, type, images)
 
       // Save model to Supabase
-      const { data: model, error: modelError } = await supabase
+      const { error: modelError } = await supabase
         .from('models')
         .insert({
           user_id: user.id,
