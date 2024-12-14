@@ -11,9 +11,6 @@ export default function GenerateImage({
 }: {
   params: { id: string }
 }) {
-  if (!params || !params.id) {
-    return <div>Error: Invalid parameters</div>;
-  }
   return <GenerateImageClient id={params.id} />
 }
 
