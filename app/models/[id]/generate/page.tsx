@@ -1,13 +1,16 @@
-import { Metadata } from 'next'
-import { GenerateImageClient } from './generate-image-client'
-import { PageProps, Params } from '@/app/types'
+import type { Metadata } from "next"
+import { GenerateImageClient } from "./generate-image-client"
 
 export const metadata: Metadata = {
-  title: 'Generate Image',
-  description: 'Generate an image using your trained model',
+  title: "Generate Image",
+  description: "Generate an image using your trained model",
 }
 
-export default function GenerateImage({ params }: PageProps<Params>) {
+interface GenerateImageProps {
+  params: { id: string }
+}
+
+export default function GenerateImage({ params }: GenerateImageProps) {
   return <GenerateImageClient id={params.id} />
 }
 
